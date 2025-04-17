@@ -1,0 +1,14 @@
+torch>=1.9.0
+torchvision>=0.10.0
+scikit-learn>=0.24.0
+opencv-python-headless>=4.5.0.0  # Use headless if no GUI needed
+numpy>=1.20.0
+matplotlib>=3.4.0
+seaborn>=0.11.0
+pandas>=1.3.0           # For handling results/metrics easily
+tqdm>=4.60.0            # Progress bars
+Pillow>=8.3.0           # Image processing dependency
+scikit-image>=0.18.0    # For HOG/LBP features
+# Optional:
+# pytorch-grad-cam      # For Grad-CAM visualization
+# imbalanced-learn      # For resampling techniques (if exploring imbalance)
