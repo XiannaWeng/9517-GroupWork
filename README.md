@@ -43,6 +43,5 @@ This project implements various machine learning and deep learning methods for i
    - EfficientNet (B0 and B3 variants)
    - Vision Transformer (ViT)
    - ResNet-18
-   - Time-invariant Vision (TiV) - placeholder
 
 Each implementation includes necessary preprocessing, training, evaluation, and visualization components.
