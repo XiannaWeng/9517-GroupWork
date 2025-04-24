@@ -68,3 +68,32 @@ Each implementation includes:
 - Detailed classification reports
 
 The project supports multiple classifiers and feature extractors that can be combined in various ways to achieve optimal performance on the aerial scene classification task.
+
+## Experimental Results
+
+### Traditional Machine Learning Methods Results
+
+| Feature | Dimensions | Classifier | Accuracy | Precision | Recall | F1 Score |
+|---------|------------|------------|----------|-----------|---------|-----------|
+| SIFT | - | SVM | 0.5875 | 0.5974 | 0.5875 | 0.5905 |
+| SIFT | - | KNN | 0.5333 | 0.5596 | 0.5333 | 0.528 |
+| Grayscale-LBP | 100 | KNN | 0.43 | 0.4328 | 0.43 | 0.4241 |
+| Grayscale-LBP | 100 | SVM | 0.5133 | 0.5499 | 0.5133 | 0.5097 |
+| Grayscale-LBP | 100 | Random Forest | 0.46 | 0.4713 | 0.46 | 0.4547 |
+| Grayscale-LBP | 100 | XGBoost | 0.4567 | 0.4705 | 0.4567 | 0.4559 |
+| Color-LBP | 100 | KNN | 0.6567 | 0.6694 | 0.6567 | 0.6545 |
+| Color-LBP | 100 | SVM | 0.6833 | 0.681 | 0.6833 | 0.678 |
+| Color-LBP | 100 | Random Forest | 0.7333 | 0.7327 | 0.7333 | 0.725 |
+| Color-LBP | 100 | XGBoost | 0.7133 | 0.7189 | 0.7133 | 0.7116 |
+| Color-LBP | 600 | KNN | 0.7233 | - | - | - |
+| Color-LBP | 600 | SVM | 0.7456 | - | - | - |
+| Color-LBP | 600 | Random Forest | 0.7717 | - | - | - |
+| Color-LBP | 600 | XGBoost | 0.7528 | - | - | - |
+
+### Deep Learning Methods Results
+
+| Method | Accuracy | F1 Score | Precision | Recall |
+|--------|----------|-----------|------------|---------|
+| EfficientNet | 0.9113 | 0.9101 | 0.9112 | 0.9113 |
+| ResNet | 0.8908 | 0.8928 | 0.8908 | 0.8908 |
+| ViT | 0.8501 | 0.8509 | 0.8502 | 0.8491 |
