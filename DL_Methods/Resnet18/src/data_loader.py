@@ -22,6 +22,20 @@ test_transform = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
+class TransformedDataset(torch.utils.data.Dataset):
+    def __init__(self, subset, transform=None):
+        self.subset = subset
+        self.transform = transform
+
+    def __getitem__(self, index):
+        x, y = self.subset[index]
+        if self.transform:
+            x = self.transform(x)
+        return x, y
+
+    def __len__(self):
+        return len(self.subset)
+
 def get_dataloaders(data_dir, batch_size=32, test_split=0.2, num_workers=4, seed=42):
     """Creates training and testing dataloaders."""
     if not os.path.isdir(data_dir):
@@ -61,22 +75,6 @@ def get_dataloaders(data_dir, batch_size=32, test_split=0.2, num_workers=4, seed
     # Create dataset subsets with respective transforms
     train_dataset = Subset(dataset, train_idx)
     test_dataset = Subset(dataset, test_idx)
-
-    # Apply transforms *after* subsetting by creating custom Dataset wrappers or applying transform on load
-    # A common way: Create wrapper datasets
-    class TransformedDataset(torch.utils.data.Dataset):
-        def __init__(self, subset, transform=None):
-            self.subset = subset
-            self.transform = transform
-
-        def __getitem__(self, index):
-            x, y = self.subset[index]
-            if self.transform:
-                x = self.transform(x)
-            return x, y
-
-        def __len__(self):
-            return len(self.subset)
 
     train_transformed_dataset = TransformedDataset(train_dataset, transform=train_transform)
     test_transformed_dataset = TransformedDataset(test_dataset, transform=test_transform)

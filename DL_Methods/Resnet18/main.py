@@ -104,7 +104,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='COMP9517 Group Project - Aerial Scene Classification')
 
     # Common arguments
-    parser.add_argument('--data_dir', type=str, default='../Aerial_Landscapes', help='Path to the dataset directory')
+    parser.add_argument('--data_dir', type=str, default='/Users/xiannaweng/Documents/UNSW/25T1/9517/GroupProject/9517-GroupWork/Aerial_Landscapes', help='Path to the dataset directory')
     parser.add_argument('--results_dir', type=str, default='./results', help='Directory to save results (plots, metrics)')
     parser.add_argument('--method_type', type=str, required=True, choices=['dl', 'ml'], help='Type of method: dl (Deep Learning) or ml (Traditional ML)')
     parser.add_argument('--test_split', type=float, default=0.2, help='Fraction of data to use for testing (default: 0.2)')
