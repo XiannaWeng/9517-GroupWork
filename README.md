@@ -18,6 +18,7 @@
 └── DL_Methods/                    # Deep Learning Methods
     ├── Efficientnet-B3.ipynb     # EfficientNet-B3 implementation
     ├── EfficientNet-B0.ipynb     # EfficientNet-B0 implementation
+    ├── efficientnei_m.ipynb      # EfficientNet-M implementation
     ├── ViT.ipynb                 # Vision Transformer implementation
     └── Resnet18/                 # ResNet-18 implementation
         ├── main.py               # Main execution script
@@ -49,6 +50,7 @@ This project implements various machine learning and deep learning methods for a
    - **EfficientNet Variants**:
      - EfficientNet-B0: Lightweight version optimized for speed
      - EfficientNet-B3: Larger version optimized for accuracy
+     - EfficientNet-M: Medium-sized version with balanced performance
    - **Vision Transformer (ViT)**: Implementation of the Vision Transformer architecture
    - **ResNet-18**: Implementation of ResNet-18 architecture with:
      - Full training pipeline
