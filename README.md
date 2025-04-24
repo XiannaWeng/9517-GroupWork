@@ -19,7 +19,6 @@
     ├── Efficientnet-B3.ipynb     # EfficientNet-B3 implementation
     ├── EfficientNet-B0.ipynb     # EfficientNet-B0 implementation
     ├── ViT.ipynb                 # Vision Transformer implementation
-    ├── TiV.ipynb                 # (Empty) Time-invariant Vision implementation
     └── Resnet18/                 # ResNet-18 implementation
         ├── main.py               # Main execution script
         ├── requirements.txt      # Python dependencies
