@@ -4,23 +4,6 @@
 
 ```
 9517-GroupWork/
-├── Aerial_Landscapes/            # Dataset directory
-│   ├── Agriculture/              # Agricultural scenes
-│   ├── Airport/                  # Airport scenes
-│   ├── Beach/                    # Beach scenes
-│   ├── City/                     # Urban city scenes
-│   ├── Desert/                   # Desert landscapes
-│   ├── Forest/                   # Forest scenes
-│   ├── Grassland/                # Grassland scenes
-│   ├── Highway/                  # Highway scenes
-│   ├── Lake/                     # Lake scenes
-│   ├── Mountain/                 # Mountain scenes
-│   ├── Parking/                  # Parking lot scenes
-│   ├── Port/                     # Port/harbor scenes
-│   ├── Railway/                  # Railway scenes
-│   ├── Residential/              # Residential area scenes
-│   └── River/                    # River scenes
-│
 ├── ML_Methods/                   # Machine Learning Methods
 │   ├── sift/                     # Scale-Invariant Feature Transform implementation
 │   │   ├── result.ipynb          # Results and analysis notebook
