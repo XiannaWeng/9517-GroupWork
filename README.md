@@ -30,11 +30,6 @@
         ├── main.py               # Main execution script
         ├── requirements.txt      # Python dependencies
         ├── results/              # Training and evaluation results
-        │   ├── resnet18_cm.png   # ResNet18 confusion matrix visualization
-        │   ├── resnet18_history.png # ResNet18 training history
-        │   ├── resnet18_metrics.csv # ResNet18 evaluation metrics
-        │   ├── svm_hog_cm.png    # HOG-SVM confusion matrix
-        │   └── svm_hog_metrics.csv # HOG-SVM evaluation metrics
         └── src/                  # Source code
             ├── data_loader.py    # Data loading and preprocessing
             ├── traditional_ml.py # Traditional ML methods (SVM, KNN)
