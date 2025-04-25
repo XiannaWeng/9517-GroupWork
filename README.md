@@ -4,8 +4,25 @@
 
 ```
 9517-GroupWork/
-├── ML_Methods/                    # Machine Learning Methods
-│   ├── sift/                      # Scale-Invariant Feature Transform implementation
+├── Aerial_Landscapes/            # Dataset directory
+│   ├── Agriculture/              # Agricultural scenes
+│   ├── Airport/                  # Airport scenes
+│   ├── Beach/                    # Beach scenes
+│   ├── City/                     # Urban city scenes
+│   ├── Desert/                   # Desert landscapes
+│   ├── Forest/                   # Forest scenes
+│   ├── Grassland/                # Grassland scenes
+│   ├── Highway/                  # Highway scenes
+│   ├── Lake/                     # Lake scenes
+│   ├── Mountain/                 # Mountain scenes
+│   ├── Parking/                  # Parking lot scenes
+│   ├── Port/                     # Port/harbor scenes
+│   ├── Railway/                  # Railway scenes
+│   ├── Residential/              # Residential area scenes
+│   └── River/                    # River scenes
+│
+├── ML_Methods/                   # Machine Learning Methods
+│   ├── sift/                     # Scale-Invariant Feature Transform implementation
 │   │   ├── result.ipynb          # Results and analysis notebook
 │   │   ├── sift.py               # Main SIFT implementation with SVM
 │   │   ├── sift_config.py        # Configuration settings
@@ -13,17 +30,28 @@
 │   │   ├── sift_feature_bow.py   # Bag of Words feature extraction
 │   │   ├── sift_knn.py           # SIFT with KNN implementation
 │   │   └── sift_preprocess.py    # Data preprocessing utilities
-│   └── lbp.ipynb                 # Local Binary Patterns with multiple classifiers
+│   └── LBP/                      # Local Binary Patterns implementation
+│       ├── lbp.ipynb             # LBP with multiple classifiers notebook
+│       └── requirements.txt      # Python dependencies for LBP
 │
-└── DL_Methods/                    # Deep Learning Methods
-    ├── Efficientnet-B3.ipynb     # EfficientNet-B3 implementation
-    ├── EfficientNet-B0.ipynb     # EfficientNet-B0 implementation
+└── DL_Methods/                   # Deep Learning Methods
+    ├── EfficientNet/             # EfficientNet implementation
+    │   ├── Efficientnet-B3.ipynb # EfficientNet-B3 notebook
+    │   ├── EfficientNet-B0.ipynb # EfficientNet-B0 notebook
+    │   └── requirements.txt      # Python dependencies for EfficientNet
+    ├── Efficientnet-fine_tune/   # Fine-tuned EfficientNet implementation
+    │   └── efficientnet-B0-fine.ipynb # Fine-tuned EfficientNet-B0 notebook
     ├── efficientnei_m.ipynb      # EfficientNet-M implementation
     ├── ViT.ipynb                 # Vision Transformer implementation
     └── Resnet18/                 # ResNet-18 implementation
         ├── main.py               # Main execution script
         ├── requirements.txt      # Python dependencies
         ├── results/              # Training and evaluation results
+        │   ├── resnet18_cm.png   # ResNet18 confusion matrix visualization
+        │   ├── resnet18_history.png # ResNet18 training history
+        │   ├── resnet18_metrics.csv # ResNet18 evaluation metrics
+        │   ├── svm_hog_cm.png    # HOG-SVM confusion matrix
+        │   └── svm_hog_metrics.csv # HOG-SVM evaluation metrics
         └── src/                  # Source code
             ├── data_loader.py    # Data loading and preprocessing
             ├── traditional_ml.py # Traditional ML methods (SVM, KNN)
