@@ -97,3 +97,134 @@ The project supports multiple classifiers and feature extractors that can be com
 | EfficientNet | 0.9113 | 0.9101 | 0.9112 | 0.9113 |
 | ResNet | 0.8908 | 0.8928 | 0.8908 | 0.8908 |
 | ViT | 0.8501 | 0.8509 | 0.8502 | 0.8491 |
+
+## Installation and Setup
+
+### Requirements
+
+To run this project, you'll need Python 3.8+ and the following dependencies:
+
+```bash
+# For ML methods
+pip install numpy pandas scikit-learn matplotlib opencv-python seaborn tqdm 
+
+# For DL methods
+pip install torch torchvision tqdm pandas matplotlib seaborn scikit-learn pillow
+
+# For ResNet18 implementation
+cd DL_Methods/Resnet18
+pip install -r requirements.txt
+```
+
+### Dataset
+
+The project uses the Aerial Landscapes dataset, which is organized as follows:
+
+```
+Aerial_Landscapes/
+├── Agriculture/    # Agricultural scenes
+├── Airport/        # Airport scenes
+├── Beach/          # Beach scenes
+├── City/           # Urban/city scenes
+├── Desert/         # Desert landscapes
+├── Forest/         # Forest scenes
+├── Grassland/      # Grassland scenes
+├── Highway/        # Highway scenes
+├── Lake/           # Lake scenes
+├── Mountain/       # Mountain scenes
+├── Parking/        # Parking lot scenes
+├── Port/           # Port/harbor scenes
+├── Railway/        # Railway scenes
+├── Residential/    # Residential area scenes
+└── River/          # River scenes
+```
+
+Each directory contains a series of JPEG images of the respective scene category.
+
+## Running the Code
+
+### Traditional Machine Learning Methods
+
+#### SIFT Features
+
+To run the SIFT-based classification:
+
+```bash
+cd ML_Methods/sift
+python sift.py --data_path '../../Aerial_Landscapes/' --classifier 'svm'
+```
+
+Options for `--classifier`: `svm`, `knn`
+
+To evaluate the SIFT results:
+
+```bash
+python sift_evaluation.py --results_path './results/'
+```
+
+#### LBP Features
+
+For LBP-based classification, run the Jupyter notebook:
+
+```bash
+cd ML_Methods
+jupyter notebook lbp.ipynb
+```
+
+Inside the notebook, you can configure:
+- Feature type (Grayscale-LBP, Color-LBP)
+- Feature dimensions (100, 600)
+- Classifier type (KNN, SVM, Random Forest, XGBoost)
+
+### Deep Learning Methods
+
+#### ResNet-18
+
+To train the ResNet-18 model:
+
+```bash
+cd DL_Methods/Resnet18
+python main.py --mode train --data_path '../../Aerial_Landscapes/' --batch_size 32 --epochs 50
+```
+
+To evaluate the model:
+
+```bash
+python main.py --mode test --data_path '../../Aerial_Landscapes/' --model_path './models/resnet18_best.pth'
+```
+
+To use traditional ML methods with ResNet-18 features:
+
+```bash
+python main.py --mode extract_features --data_path '../../Aerial_Landscapes/' --model_path './models/resnet18_best.pth'
+python src/traditional_ml.py --features_path './features/resnet18_features.pkl' --classifier 'svm'
+```
+
+Options for `--classifier`: `svm`, `knn`, `random_forest`, `xgboost`
+
+#### EfficientNet and ViT
+
+For EfficientNet and Vision Transformer implementations, run the respective Jupyter notebooks:
+
+```bash
+cd DL_Methods
+jupyter notebook EfficientNet-B3.ipynb
+# or
+jupyter notebook ViT.ipynb
+```
+
+Each notebook contains detailed instructions on:
+- Loading and preprocessing the data
+- Training the model
+- Evaluating the results
+- Visualizing performance
+
+## Code Documentation
+
+Each module in the project has been documented with docstrings and comments explaining:
+- Function purpose and parameters
+- Implementation details
+- References to papers or external resources
+- Usage examples
+
+For detailed API documentation, refer to the docstrings in individual files.
