@@ -1,5 +1,7 @@
 # 9517-GroupWork
 
+**Version:** 1.0.0
+
 ## Project Structure
 
 ```
